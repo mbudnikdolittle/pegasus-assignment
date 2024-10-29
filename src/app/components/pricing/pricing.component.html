@@ -12,10 +12,12 @@
                 The informative, and brief subheading that builds the interest around the created product. The copy encourages user to discover it.
             </p>
         </header>
-        <div class="price-cards-container flex-wrap">
-            <price-card></price-card>
-            <price-card></price-card>
-            <price-card></price-card>
-        </div>
+        <ul class="price-cards-container flex-wrap">
+            @for (card of cards(); track card.id) {
+                <li>
+                    <price-card [card]="card"></price-card>
+                </li>
+            }
+        </ul>
     </div>
 </div>

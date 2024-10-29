@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@import "../../../../variables.scss";
 
 .card {
     border-radius: $border-radius;
@@ -61,6 +61,7 @@
     }
 
     .cta-btn {
+        margin-top: 1rem;
         width: 100%;
     }
 }

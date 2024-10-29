@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PriceCard } from './price-card/price-card.component';
+import { PricingService } from './pricing.service';
 
 @Component({
   standalone: true,
@@ -8,4 +9,7 @@ import { PriceCard } from './price-card/price-card.component';
   styleUrl: './pricing.component.scss',
   imports: [CommonModule, PriceCard],
 })
-export class PricingComponent {}
+export class PricingComponent {
+  private pricingService = inject(PricingService);
+  cards = this.pricingService.allPriceCards;
+}

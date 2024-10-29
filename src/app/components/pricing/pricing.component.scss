@@ -1,10 +1,13 @@
-@import "../../variables.scss";
+@import "../../../variables.scss";
 
 .background-primary {
     clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 97%);
     background: $bg-primary;
     min-height: 60vh;
     position: relative;
+    @media only screen and (max-width: 767px) {
+        min-height: 30rem;
+    }
 }
 
 .background-secondary {
@@ -12,6 +15,9 @@
     background: $bg-secondary;
     min-height: 50vh;
     position: relative;
+    @media only screen and (max-width: 767px) {
+        min-height: 30rem;
+    }
 }
 
 .content-wrapper {
@@ -59,7 +65,13 @@
     flex-direction: row;
     gap: 2rem;
     justify-content: center;
+    padding-bottom: 5rem;
     @media only screen and (max-width: 767px) {
        flex-direction: column;
     }
+}
+
+
+ul {
+    list-style: none;
 }
