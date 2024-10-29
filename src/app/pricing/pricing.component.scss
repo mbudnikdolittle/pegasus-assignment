@@ -1,0 +1,42 @@
+
+@import "../..//variables.scss";
+
+.background-secondary {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+    background: $bg-secondary;
+    min-height: 50vh;
+}
+
+.background-primary {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 97%);
+    background: $bg-primary;
+    min-height: 60vh;
+}
+
+.pricing-header {
+    padding: 10rem 1rem 5rem 1rem;
+    z-index: 99;
+
+    .subtitle {
+        max-width: 50%;
+        color: $text-secondary;
+        letter-spacing: 0.5px;
+    }
+
+    .overline {
+        letter-spacing: 1.5px;
+        color: $text-secondary;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding-top: 5rem;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            max-width: 100%;
+        }
+    }
+}
