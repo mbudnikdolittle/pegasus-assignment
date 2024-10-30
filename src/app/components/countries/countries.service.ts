@@ -1,17 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { map } from 'rxjs';
-import { IApiCountry } from './country.model';
+import { map, tap } from 'rxjs';
+import { IApiCountry, ICountry } from './country.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountriesService {
-  private countriesData = signal<any>([]);
   private httpClient = inject(HttpClient);
+  countries = signal<ICountry[]>([]);
 
-  getAllCountriesData() {
-    this.httpClient
+  allCountries = this.countries.asReadonly();
+
+  loadCountries() {
+    return this.fetchAllCountriesData().pipe(
+      tap({
+        next: (fetchedCountries) => this.countries.set(fetchedCountries),
+      })
+    );
+  }
+
+  private fetchAllCountriesData() {
+    return this.httpClient
       .get<IApiCountry[]>('https://restcountries.com/v3.1/all')
       .pipe(
         map((res) =>
@@ -22,14 +32,9 @@ export class CountriesService {
             population: country.population,
             status: country.status,
             googleMapHref: country.maps.googleMaps,
-            continents: country.continents,
+            continents: country.continents.join(' ,'),
           }))
         )
-      )
-      .subscribe({
-        next: (countries) => {
-          this.countriesData.set(countries);
-        },
-      });
+      );
   }
 }

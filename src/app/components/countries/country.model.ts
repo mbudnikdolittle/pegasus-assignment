@@ -5,7 +5,7 @@ export interface ICountry {
   population: number;
   status: string;
   googleMapHref: string;
-  continents: string[];
+  continents: string;
 }
 
 export interface IApiCountry {

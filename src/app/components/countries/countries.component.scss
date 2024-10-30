@@ -12,7 +12,6 @@
 .content-wrapper {
     background: white;
     height: calc(100% - 4rem - 4rem); // height 100% - margin top and margin bottom (m-7 is 4rem)
-    overflow: auto;
 }
 
 h1, h5 {
@@ -21,4 +20,20 @@ h1, h5 {
 
 .subtitle, .settings-description {
     color: $dark-grey;
+}
+
+.countries-table {
+    height: 60vh;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.assigned-icon {
+    color: $success;
+}
+
+.map-icon {
+    color: $primary;
 }

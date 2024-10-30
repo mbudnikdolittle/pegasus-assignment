@@ -12,8 +12,43 @@
                 <h5 class="font-medium text-lg line-height-2 mb-3">Countries</h5>
                 <span class="settings-description line-height-2">Manage your countries in this project</span>
             </div>
-            <div class="table col-8">
-                
+            <div class="countries-table col-8">
+                <p-table [value]="countries()" [scrollable]="true" scrollHeight="flex" [virtualScroll]="true">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th [style]="{'width': '40%'}">Country</th>
+                            <th [style]="{'width': '20%'}">Population</th>
+                            <th [style]="{'width': '20%'}">Continent</th>
+                            <th [style]="{'width': '10%'}">Status</th>
+                            <th [style]="{'width': '10%'}">Maps</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-country>
+                        <tr>
+                            <td class="flex flex-row">
+                                <div class="text-5xl mr-3">{{ country.flag }}</div>
+                                <div class="flex flex-column gap-2">
+                                    <span class="font-medium text-black">{{country.name}}</span>
+                                    <span class="text-sm">{{ country.currency}}</span>
+                                </div>
+                            </td>
+                            <td class="text-sm">{{ country.population }}</td>
+                            <td class="text-sm">{{ country.continents }}</td>
+                            <td>
+                                @if(country.status === 'officially-assigned') {
+                                    <i class="pi pi-check-circle assigned-icon text-xl" 
+                                        role="img" aria-label="Officially assigned"></i>
+                                }
+                            </td>
+                            <td>
+                                <a [href]="country.googleMapHref">
+                                    <i class="pi pi-globe map-icon text-xl" 
+                                        role="img" aria-label="Link to Google Maps"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
             </div>
         </div>
     </div>
