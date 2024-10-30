@@ -3,6 +3,7 @@
 @import "primeng/resources/themes/lara-light-indigo/theme.css";
 @import 'primeng/resources/primeng.min.css';
 @import 'primeicons/primeicons.css';
+@import './variables.scss';
 
 
 * {
@@ -16,4 +17,32 @@ body {
   
 h1, h2, h3, h4, p {
     margin: 0;
+}
+
+.p-chip {
+    background-color: $primary;
+    color: #ffffff;
+    letter-spacing: 0.25px;
+}
+
+.highlight-btn .p-button{
+    background-color: $primary;
+    border-color: $primary;
+    color: #ffffff;
+}
+  
+.btn .p-button{
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+}
+
+.highlight-btn:hover .p-button:hover {
+    background-color: $bg-primary;
+    border-color: $bg-primary;
+}
+  
+.btn:hover .p-button:hover {
+    background-color: darken($secondary, 10%);
+    border-color: darken($secondary, 10%);
 }

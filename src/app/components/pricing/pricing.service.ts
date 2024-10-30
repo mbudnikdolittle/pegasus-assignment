@@ -59,7 +59,7 @@ const mockedPriceCards = [
     option: 'Option Name',
     price: '$19/month',
     description: 'Good starting point',
-    label: 'Most popular',
+    label: 'Most Popular',
     benefits: mockedAllIncludedBenefits,
     isHighlighted: true,
   },

@@ -4,6 +4,9 @@
         <h4 class="text-xl font-semibold line-height-3">{{ card().option }}</h4>
         <h2 class="text-6xl">{{ card().price }}</h2>
         <span class="option-description line-height-3">{{ card().description }}</span>
+        @if (card().label) {
+            <p-chip styleClass="px-3 my-2 p-chip text-sm" [label]="card().label" />
+        }
     </div>
     <hr>
     <ul class="flex flex-column gap-3">
@@ -15,6 +18,9 @@
         }
     </ul>
     <div class="cta-btn">
-        <p-button [style]="{'width':'100%'}" label="Get started"></p-button>
+        <p-button 
+        [ngClass]="{'highlight-btn': card().isHighlighted , 'btn':!card().isHighlighted}" 
+        [style]="{'width':'100%'}" 
+        label="Get started"></p-button>
     </div>
 </div>
