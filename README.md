@@ -3,6 +3,10 @@
 This project was created for Pegasus Frontend Assignment  
 Project is deployed to [Github page](https://mbudnikdolittle.github.io/pegasus-assignment/).
 
+Paths:
+/ - Pricing Page
+/countries - Countries & Currencies Page
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
 

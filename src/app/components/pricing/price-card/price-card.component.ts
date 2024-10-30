@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { IPriceCard } from './../../../models/price-card.model';
+import { IPriceCard } from '../price-card.model';
 import { Component, input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';

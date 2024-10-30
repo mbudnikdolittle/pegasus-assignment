@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DividerModule } from 'primeng/divider';
+import { CountriesService } from './countries.service';
 
 @Component({
   standalone: true,
@@ -7,4 +8,9 @@ import { DividerModule } from 'primeng/divider';
   styleUrl: './countries.component.scss',
   imports: [DividerModule],
 })
-export class CountriesComponent {}
+export class CountriesComponent implements OnInit {
+  private countriesService = inject(CountriesService);
+  ngOnInit() {
+    this.countriesService.getAllCountriesData();
+  }
+}

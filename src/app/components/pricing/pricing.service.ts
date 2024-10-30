@@ -1,6 +1,6 @@
-import { BENEFIT_STATUS } from './../../models/price-card.model';
+import { BENEFIT_STATUS } from './price-card.model';
 import { Injectable, signal } from '@angular/core';
-import { IPriceCard } from '../../models/price-card.model';
+import { IPriceCard } from './price-card.model';
 
 const mockedAllIncludedBenefits = [
   {
