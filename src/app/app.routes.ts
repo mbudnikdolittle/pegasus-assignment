@@ -8,4 +8,11 @@ export const routes: Routes = [
         (mod) => mod.PricingComponent
       ),
   },
+  {
+    path: 'countries',
+    loadComponent: () =>
+      import('./components/countries/countries.component').then(
+        (mod) => mod.CountriesComponent
+      ),
+  },
 ];
