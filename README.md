@@ -4,7 +4,7 @@ This project was created for Pegasus Frontend Assignment
 Project is deployed to [Github page](https://mbudnikdolittle.github.io/pegasus-assignment/).
 
 Paths:
-/ - Pricing Page
+/ - Pricing Page  
 /countries - Countries & Currencies Page (currently page is working only locally due to issue with gh pages deploy - not resolved yet)
 
 
